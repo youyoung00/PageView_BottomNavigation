@@ -35,7 +35,7 @@ class _MainState extends State<Main> {
       appBar: AppBar(
         backgroundColor: Colors.green,
         centerTitle: true,
-        title: Text("Logo"),
+        title: Text("카푸어 월드"),
         actions: [
           IconButton(
             onPressed: (){},
