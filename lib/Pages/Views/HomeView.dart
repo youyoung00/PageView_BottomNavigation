@@ -8,6 +8,93 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
 
+  // 함수의 활용 첫번째의 데이터 리팩토링
+  String _title1 = "감성 올드카 특별전";
+  String _title2 = "캠핑 SUV 특별전";
+
+  List<Map<String,String>> _eventItems1 = [
+
+    {
+      "saleImgUrl" : "https://images.unsplash.com/photo-1613027917127-75568701dde4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fG9sZGNhcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+      "saleName" : "Car No.1",
+      "salePrice" : "300,000,000원"
+    },
+    {
+      "saleImgUrl" : "https://images.unsplash.com/photo-1507682226856-bbd49d1bfa5a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjN8fG9sZGNhcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+      "saleName" : "Car No.2",
+      "salePrice" : "200,000,000원"
+    },
+    {
+      "saleImgUrl" : "https://images.unsplash.com/photo-1591186448336-d859f60f94b5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjd8fG9sZGNhcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+      "saleName" : "Car No.3",
+      "salePrice" : "100,000,000원"
+    }
+  ];
+
+  List<Map<String,String>> _eventItems2 = [
+    {
+      "saleImgUrl" : "https://images.unsplash.com/photo-1563720223523-491ff04651de?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3V2JTIwY2Fyc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60",
+      "saleName" : "Jeep",
+      "salePrice" : "48,400,000원"
+    },
+    {
+      "saleImgUrl" : "https://images.unsplash.com/photo-1612057473166-af2affdb92ad?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c3V2JTIwY2Fyc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60",
+      "saleName" : "Ford",
+      "salePrice" : "63,900,000원"
+    },
+    {
+      "saleImgUrl" : "https://images.unsplash.com/photo-1539703061-473d7576d772?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHN1diUyMGNhcnN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60",
+      "saleName" : "Land Rover",
+      "salePrice" : "67,700,000원"
+    },
+  ];
+
+  //함수활용 두번째 방식의 데이터 리팩토링
+  List<Map<String,dynamic>> _eventItems = [
+    {
+      "eventTitle" : "감성 올드카 특별전",
+      "eventItemList" : [
+        {
+          "eventImgUrl" : "https://images.unsplash.com/photo-1613027917127-75568701dde4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fG9sZGNhcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "eventName" : "Car No.1",
+          "eventPrice" : "300,000,000원"
+        },
+
+        {
+          "eventImgUrl" : "https://images.unsplash.com/photo-1507682226856-bbd49d1bfa5a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjN8fG9sZGNhcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "eventName" : "Car No.2",
+          "eventPrice" : "200,000,000원"
+        },
+        {
+          "eventImgUrl" : "https://images.unsplash.com/photo-1591186448336-d859f60f94b5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjd8fG9sZGNhcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "eventName" : "Car No.3",
+          "eventPrice" : "100,000,000원"
+        }
+      ],
+    },
+
+    {
+      "eventTitle" : "캠핑 SUV 특별전",
+      "eventItemList" : [
+        {
+          "eventImgUrl" : "https://images.unsplash.com/photo-1563720223523-491ff04651de?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3V2JTIwY2Fyc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60",
+          "eventName" : "Jeep",
+          "eventPrice" : "48,400,000원"
+        },
+        {
+          "eventImgUrl" : "https://images.unsplash.com/photo-1612057473166-af2affdb92ad?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c3V2JTIwY2Fyc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60",
+          "eventName" : "Ford",
+          "eventPrice" : "63,900,000원"
+        },
+        {
+          "eventImgUrl" : "https://images.unsplash.com/photo-1539703061-473d7576d772?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHN1diUyMGNhcnN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60",
+          "eventName" : "Land Rover",
+          "eventPrice" : "67,700,000원"
+        },
+      ]
+    }
+  ];
+
   PageController? _pageController;
   List<String> _selectNum = ["람보르기니", "맥라렌", "머스탱"];
   int _selectIndex = 0;
@@ -15,24 +102,6 @@ class _HomeViewState extends State<HomeView> {
     "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y2FyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
     "https://images.unsplash.com/photo-1542362567-b07e54358753?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTl8fGNhcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
     "https://images.unsplash.com/photo-1494905998402-395d579af36f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGNhcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-  ];
-
-  List<Map<String,String>> _sale1Items = [
-    {
-      "sale1ImgUrl" : "https://images.unsplash.com/photo-1613027917127-75568701dde4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fG9sZGNhcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-      "sale1Name" : "Car No.1",
-      "sale1Price" : "300,000,000원"
-    },
-    {
-      "sale1ImgUrl" : "https://images.unsplash.com/photo-1507682226856-bbd49d1bfa5a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjN8fG9sZGNhcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-      "sale1Name" : "Car No.2",
-      "sale1Price" : "200,000,000원"
-    },
-    {
-      "sale1ImgUrl" : "https://images.unsplash.com/photo-1591186448336-d859f60f94b5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjd8fG9sZGNhcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-      "sale1Name" : "Car No.3",
-      "sale1Price" : "100,000,000원"
-    }
   ];
 
   @override
@@ -54,8 +123,18 @@ class _HomeViewState extends State<HomeView> {
         child: Column(
           children: [
             this._topBanner(),
-            this._SaleList1(),
-            Container(),
+            //동일 함수의 다른 데이터 구현방식 1
+            // this._eventList(event: List.of(_eventItems1) , title: _title1.toString()),
+            // this._eventList(event: List.of(_eventItems2) , title: _title2.toString()),
+            //동일 함수의 다른 데이터 구현방식 2
+            // this._eventList(event: List.of(this._eventItems[0]["eventItemList"]), title: this._eventItems[0]["eventTitle"].toString()),
+            // this._eventList(event: List.of(this._eventItems[1]["eventItemList"]), title: this._eventItems[1]["eventTitle"].toString()),
+            //동일 함수의 다른 데이터 구현방식 3
+            Container(
+              child: Column(
+                children: this._eventItems.map<Widget>((Map<String,dynamic> e ) => this._eventList(event: e["eventItemList"], title: e["eventTitle"])).toList(),
+              ),
+            ),
             Container()
           ],
         )
@@ -151,7 +230,7 @@ class _HomeViewState extends State<HomeView> {
       )
     );
   }
-  Widget _SaleList1(){
+  Widget _eventList({required List event, required String title }){
     return Container(
       height: 300,
       //color: Colors.red,
@@ -162,7 +241,7 @@ class _HomeViewState extends State<HomeView> {
             alignment: Alignment.centerLeft,
             //color: Colors.blue,
             child: Text(
-              "감성 올드카 특별전",
+              title,
               style: TextStyle(
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold
@@ -179,7 +258,7 @@ class _HomeViewState extends State<HomeView> {
                 crossAxisSpacing: 10.0,
                 mainAxisSpacing: 10.0,
               ),
-              itemCount: 3,
+              itemCount: event.length,
               itemBuilder: (BuildContext context, int i){
                 return Container(
                   child: Column(
@@ -189,7 +268,7 @@ class _HomeViewState extends State<HomeView> {
                           decoration: BoxDecoration(
                             image: DecorationImage(
                               fit: BoxFit.cover,
-                              image: NetworkImage(this._sale1Items[i]["sale1ImgUrl"].toString())
+                              image: NetworkImage(event[i]["eventImgUrl"])
                             )
                           ),
                         ),
@@ -200,13 +279,13 @@ class _HomeViewState extends State<HomeView> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              this._sale1Items[i]["sale1Name"].toString(),
+                              event[i]["eventName"].toString(),
                               style: TextStyle(
                                 color: Colors.green,
                                 fontWeight: FontWeight.bold
                               ),
                             ),
-                            Text(this._sale1Items[i]["sale1Price"].toString())
+                            Text(event[i]["eventPrice"].toString())
                           ],
                         ),
                       )
