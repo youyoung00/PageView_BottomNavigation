@@ -4,19 +4,21 @@ import 'package:selfproject_layout/Pages/Views/SearchView.dart';
 import 'package:selfproject_layout/Pages/Views/SettingView.dart';
 import 'package:selfproject_layout/Pages/Views/ThrView.dart';
 
+
 class Main extends StatefulWidget {
   @override
   _MainState createState() => _MainState();
 }
 
 class _MainState extends State<Main> {
+  //String? sdata;
   int _bottomNum = 0;
   PageController? _pageController;
-
   List<Widget> _Views = [new HomeView(), new SearchView(), new ThrView(), new SettingView()];
 
   @override
   void initState() {
+
     this._pageController = new PageController();
     super.initState();
   }
